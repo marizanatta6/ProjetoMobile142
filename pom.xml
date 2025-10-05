@@ -12,16 +12,13 @@
         <maven.compiler.target>21</maven.compiler.target>
     </properties>
 
-    <!-- Todas as dependências vão AQUI -->
     <dependencies>
-        <!-- Selenium -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.15.0</version>
         </dependency>
 
-        <!-- TestNG -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -29,7 +26,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- WebDriverManager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
@@ -37,7 +33,6 @@
         </dependency>
     </dependencies>
 
-    <!-- Plugins opcionais -->
     <build>
         <plugins>
             <plugin>
