@@ -2,23 +2,31 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class HomePage {
+
     private WebDriver driver;
 
-    private By searchBox = By.id("search_input");
-    private By searchButton = By.id("search_button");
+    private By origem = By.name("fromPort");
+    private By destino = By.name("toPort");
+    private By botaoPesquisar = By.cssSelector("input[type='submit']");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void pesquisaProduto(String productName) {
-        driver.findElement(searchBox).sendKeys(productName);
-        driver.findElement(searchButton).click();
+    public void selecionarOrigem(String cidade) {
+        Select selectOrigem = new Select(driver.findElement(origem));
+        selectOrigem.selectByVisibleText(cidade);
     }
 
-    public void selecionaProduto(String productName) {
-        driver.findElement(By.xpath("//div[text()='" + productName + "']")).click();
+    public void selecionarDestino(String cidade) {
+        Select selectDestino = new Select(driver.findElement(destino));
+        selectDestino.selectByVisibleText(cidade);
+    }
+
+    public void clicarPesquisar() {
+        driver.findElement(botaoPesquisar).click();
     }
 }

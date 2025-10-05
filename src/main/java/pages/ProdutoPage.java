@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class ProdutoPage {
@@ -18,13 +17,11 @@ public class ProdutoPage {
     }
 
     public void selecionarOrigem(String cidade) {
-        Select selectOrigem = new Select(driver.findElement(origem));
-        selectOrigem.selectByVisibleText(cidade);
+        new Select(driver.findElement(origem)).selectByVisibleText(cidade);
     }
 
     public void selecionarDestino(String cidade) {
-        Select selectDestino = new Select(driver.findElement(destino));
-        selectDestino.selectByVisibleText(cidade);
+        new Select(driver.findElement(destino)).selectByVisibleText(cidade);
     }
 
     public void clicarPesquisar() {
